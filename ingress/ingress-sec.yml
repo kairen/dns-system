@@ -1,0 +1,31 @@
+apiVersion: inwinstack.com/v1
+kind: Security
+metadata:
+  name: k8s-ingress-controller
+  namespace: kube-system
+spec:
+  action: allow
+  applications:
+  - any
+  categories:
+  - any
+  description: "Kubernetes Ingress controller security."
+  destinationAddresses:
+  - 255.255.255.0
+  destinationZones:
+  - AI public service network
+  disableServerResponseInspection: false
+  group: inwin-monitor
+  hipProfiles:
+  - any
+  logEnd: true
+  logSetting: siem_forward
+  services:
+  - k8s-system-tcp
+  - k8s-system-udp
+  sourceAddresses:
+  - any
+  sourceUsers:
+  - any
+  sourceZones:
+  - untrust

@@ -1,0 +1,8 @@
+apiVersion: inwinstack.com/v1
+kind: IP
+metadata:
+  name: dns-public-ip
+  namespace: dns-system
+spec:
+  poolName: internet
+  updateNamespace: false

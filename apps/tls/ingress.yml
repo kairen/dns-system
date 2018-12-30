@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echo
+  annotations:
+    nginx.ingress.kubernetes.io/auth-tls-verify-client: "on"
+    nginx.ingress.kubernetes.io/auth-tls-secret: "kairen/tls-certs"
+spec:
+  tls:
+  - hosts:
+    - tls.kairen.k8s.ai
+    secretName: tls-certs
+  rules:
+  - host: tls.kairen.k8s.ai
+    http:
+      paths:
+      - backend:
+          serviceName: http-svc
+          servicePort: 80
+        path: /

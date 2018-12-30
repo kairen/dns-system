@@ -1,0 +1,20 @@
+apiVersion: inwinstack.com/v1
+kind: NAT
+metadata:
+  name: k8s-dns-system
+  namespace: dns-system
+spec:
+  datAddress: 172.22.132.10
+  datType: destination-translation
+  description: "Kubernetes DNS server NAT."
+  destinationAddresses:
+  - 255.255.255.0
+  destinationZone: untrust
+  satType: none
+  service: any
+  sourceAddresses:
+  - any
+  sourceZones:
+  - untrust
+  toInterface: any
+  type: ipv4

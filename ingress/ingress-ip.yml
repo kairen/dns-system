@@ -1,0 +1,8 @@
+apiVersion: inwinstack.com/v1
+kind: IP
+metadata:
+  name: ingress-public-ip
+  namespace: kube-system
+spec:
+  poolName: internet
+  updateNamespace: false

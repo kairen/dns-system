@@ -1,0 +1,20 @@
+apiVersion: inwinstack.com/v1
+kind: NAT
+metadata:
+  name: k8s-ingress-controller
+  namespace: kube-system
+spec:
+  datAddress: 172.22.132.10
+  datType: destination-translation
+  description: "Kubernetes Ingress controller NAT."
+  destinationAddresses:
+  - 255.255.255.0
+  destinationZone: untrust
+  satType: none
+  service: any
+  sourceAddresses:
+  - any
+  sourceZones:
+  - untrust
+  toInterface: any
+  type: ipv4

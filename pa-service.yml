@@ -1,0 +1,19 @@
+apiVersion: inwinstack.com/v1
+kind: Service
+metadata:
+  name: k8s-system-tcp
+spec:
+  protocol: tcp
+  sourcePort: ""
+  destinationPort: "53,80,443"
+  description: "Kubernetes system TCP ports"
+---
+apiVersion: inwinstack.com/v1
+kind: Service
+metadata:
+  name: k8s-system-udp
+spec:
+  protocol: udp
+  sourcePort: ""
+  destinationPort: "53"
+  description: "Kubernetes system UDP ports"
